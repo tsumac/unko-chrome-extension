@@ -1,0 +1,36 @@
+{
+  "name": "unko-extension",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Sample of google extension.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "jquery-3.2.1.min.js",
+        "unko.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon16.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "alarms"
+  ]
+}
